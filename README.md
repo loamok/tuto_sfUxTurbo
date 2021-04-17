@@ -11,7 +11,7 @@ Et donc sans avoir à apprendre et maîtriser ce framework js.
 
 Il apporte l'intégration avec **Symfony Mercure**[5] et est compatible avec d'autres système de broadcast de modifications du DOM.
 
-Pré-requis : php 7.2+ (7.4 dans notre cas), Symfony 5.2+, un serveur de Base de données (mysql ou mariaDB (11) ou ce que vous maîtriser MariaDB est un choix très personnel), un ide, une console, optionnel mais fortement recommandé : Docker / docker-compose (dock-station est utile dans ce cas là).
+Pré-requis : php 7.2+ (7.4 dans notre cas), Symfony 5.2+, un serveur de Base de données (mysql ou mariaDB (10.5) ou ce que vous maîtriser MariaDB est un choix très personnel), un ide, une console, optionnel mais fortement recommandé : Docker / docker-compose (dock-station est utile dans ce cas là).
 
 ## Objectif du tuto :
 
