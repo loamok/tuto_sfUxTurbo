@@ -11,7 +11,7 @@ Et donc sans avoir à apprendre et maîtriser ce framework js.
 
 Il apporte l'intégration avec **Symfony Mercure**[5] et est compatible avec d'autres système de broadcast de modifications du DOM.
 
-Pré-requis : php 7.2+ (7.4 dans notre cas), Symfony 5.2+, un serveur de Base de données (mysql ou mariaDB (11) ou ce que vous maîtriser MariaDB est un choix très personnel), un ide, une console, optionnel mais fortement recommandé : Docker / docker-compose (dock-station est utile dans ce cas là).
+Pré-requis : php 7.2+ (7.4 dans notre cas), Symfony 5.2+, un serveur de Base de données (mysql ou mariaDB (10.5) ou ce que vous maîtriser MariaDB est un choix très personnel), un ide, une console, optionnel mais fortement recommandé : Docker / docker-compose (dock-station est utile dans ce cas là).
 
 ## Objectif du tuto :
 
@@ -65,9 +65,6 @@ Si Php est installé sur votre poste vous devriez d'ors et déjà être en mesur
 Si vous n'avez pas Php sur votre poste ou que c'est plus compliqué (utilisateurs de Windows, Mac os ..) je vous ajoute un docker-compose au chapitre suivant.
 
 Le système Docker sera de toute façon très utile pour la suite à la mise en place des utilitaires Webpack,  Mercury, et autres (qui as dit Rabbit ? non normalement on ne se servira pas de RabbitMq, enfin c'est pas prévu d'être utile ici mais je ne pense pas que UX Turbo et Mercure vous empêche d'avoir le broker de message aussi) donc autant commencer par là.
-
-- - -
-
 
 - - -
 
