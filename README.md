@@ -171,6 +171,8 @@ Du coup pour le moment je trouve pas ça plus simple que de se lancer dans autre
 
 Bah ce sera le prochain chapitre alors ..
 
+L'état actuel de notre future SPA ici : https://github.com/loamok/tuto_sfUxTurbo/tree/initial/sf_ux
+
 - - -
 
 *liens : 
