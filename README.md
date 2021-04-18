@@ -52,7 +52,7 @@ On démarre avec un projet Symfony vierge à partir de la console sf :
      symfony new tuto_sfUxTurbo --full
 
 Cela doit nous amenez à l’état de la branche suivante : 
-https://github.com/loamok/tuto_sfUxTurbo/tree/initial/sf_naked
+https://github.com/loamok/tuto_sfUxTurbo/tree/feature/sf_naked
 
 *Indice : selon vos manipulation le projet sera dans un dossier "tuto_sfUxTurbo"*
 
@@ -65,9 +65,6 @@ Si Php est installé sur votre poste vous devriez d'ors et déjà être en mesur
 Si vous n'avez pas Php sur votre poste ou que c'est plus compliqué (utilisateurs de Windows, Mac os ..) je vous ajoute un docker-compose au chapitre suivant.
 
 Le système Docker sera de toute façon très utile pour la suite à la mise en place des utilitaires Webpack,  Mercury, et autres (qui as dit Rabbit ? non normalement on ne se servira pas de RabbitMq, enfin c'est pas prévu d'être utile ici mais je ne pense pas que UX Turbo et Mercure vous empêche d'avoir le broker de message aussi) donc autant commencer par là.
-
-- - -
-
 
 - - -
 
