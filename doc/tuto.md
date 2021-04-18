@@ -52,7 +52,7 @@ On démarre avec un projet Symfony vierge à partir de la console sf :
      symfony new tuto_sfUxTurbo --full
 
 Cela doit nous amenez à l’état de la branche suivante : 
-https://github.com/loamok/tuto_sfUxTurbo/tree/initial/sf_naked
+https://github.com/loamok/tuto_sfUxTurbo/tree/feature/sf_naked
 
 *Indice : selon vos manipulation le projet sera dans un dossier "tuto_sfUxTurbo"*
 
