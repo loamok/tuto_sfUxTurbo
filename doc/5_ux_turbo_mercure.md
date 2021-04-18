@@ -47,4 +47,18 @@ Sur la page Readme du bundle Ux-Turbo il y as un micro tuto de chat.
 
 J'ai donc repris ce code et nous allons le tester.
 
+Ça ne commence pas très bien, la classe "Symfony\Component\Mercure\PublisherInterface" est dépréciée !
+
+À la place il est indiqué d'utiliser "Symfony\Component\Mercure\HubInterface" en espérant qu'elle supporte les mêmes fonctions.
+
+### Bilan :
+
+C'est un échec !
+
+Au point ou j'en suit, j'y ait passé 2 jours et ça ne fonctionne pas !
+
+J'ai suivi pleins de tutos, essayé la stack symfony docker mercure de Dunglas sans succès.
+
+J'essaye peut être autre chose en dernier recours sinon il faudra que je trouve un remplaçant à Mercure.
+
 > Written with [StackEdit](https://stackedit.io/).
