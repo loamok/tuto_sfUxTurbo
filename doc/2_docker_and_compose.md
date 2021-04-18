@@ -9,7 +9,7 @@ Dans notre définition de besoins nous stockons au moins les utilisateurs en bas
 
 ### Composition
 
-Sur la branche https://github.com/loamok/tuto_sfUxTurbo/tree/initial/sf_dockerized vous trouverez tout ce qu'il vous faut pour commencer à Dockerizer notre SPA.
+Sur la branche https://github.com/loamok/tuto_sfUxTurbo/tree/feature/sf_dockerized vous trouverez tout ce qu'il vous faut pour commencer à Dockerizer notre SPA.
 
 Un docker-compose avec
 - Nginx

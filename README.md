@@ -52,7 +52,7 @@ On démarre avec un projet Symfony vierge à partir de la console sf :
      symfony new tuto_sfUxTurbo --full
 
 Cela doit nous amenez à l’état de la branche suivante : 
-https://github.com/loamok/tuto_sfUxTurbo/tree/initial/sf_naked
+https://github.com/loamok/tuto_sfUxTurbo/tree/feature/sf_naked
 
 *Indice : selon vos manipulation le projet sera dans un dossier "tuto_sfUxTurbo"*
 
@@ -78,7 +78,7 @@ Dans notre définition de besoins nous stockons au moins les utilisateurs en bas
 
 ### Composition
 
-Sur la branche https://github.com/loamok/tuto_sfUxTurbo/tree/initial/sf_dockerized vous trouverez tout ce qu'il vous faut pour commencer à Dockerizer notre SPA.
+Sur la branche https://github.com/loamok/tuto_sfUxTurbo/tree/feature/sf_dockerized vous trouverez tout ce qu'il vous faut pour commencer à Dockerizer notre SPA.
 
 Un docker-compose avec
 - Nginx
@@ -171,7 +171,7 @@ Du coup pour le moment je trouve pas ça plus simple que de se lancer dans autre
 
 Bah ce sera le prochain chapitre alors ..
 
-L'état actuel de notre future SPA ici : https://github.com/loamok/tuto_sfUxTurbo/tree/initial/sf_ux
+L'état actuel de notre future SPA ici : https://github.com/loamok/tuto_sfUxTurbo/tree/feature/sf_ux
 
 - - -
 
