@@ -11,9 +11,11 @@ services:
       MYSQL_DATABASE: '${MYSQL_DATABASE}'
       MYSQL_USER: '${MYSQL_USER}'
       MYSQL_PASSWORD: '${MYSQL_PASSWORD}'
+    volumes:
+      - './docker/sqld/initSqld.sql:/docker-entrypoint-initdb.d/1.sql'
     restart: unless-stopped
     ports:
-      - '${MYSQL_EXT_PORT}:3306'
+      - '${MYSQL_EXT_PORT:-8006}:3306'
   php:
     build:
       context: ./docker/php-fpm/
@@ -38,7 +40,7 @@ services:
     volumes:
       - './:/var/www/sfuxturbo/'
     ports:
-      - '${NGINX_EXT_PORT}:80'
+      - '${NGINX_EXT_PORT:8000}:80'
     restart: unless-stopped
     depends_on:
       - php
@@ -53,15 +55,30 @@ services:
     volumes:
       - './:/var/www/sfuxturbo/'
     ports:
-      - '${NODE_EXT_PORT}:8080'
+      - '${NODE_EXT_PORT:-8080}:8080'
     restart: unless-stopped
   phpmyadmin:
     image: 'phpmyadmin/phpmyadmin:latest'
     ports:
-      - '${PMA_EXT_PORT}:80'
+      - '${PMA_EXT_PORT:-8001}:80'
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=database
+    restart: unless-stopped
+    depends_on:
+      - database
+  sqld:
+    image: d0whc3r/wwwsqldesigner
+    ports:
+      - '${SQLD_EXT_PORT:-8002}:80'
+    environment:
+      DATABASE_SERVER: database
+      DATABASE_USER: root
+      DATABASE_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+      DATABASE_NAME: sqld
+      DATABASE_TABLE: wwwsqldesigner
+      DATABASE_ROOT: root
+      DATABASE_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
     restart: unless-stopped
     depends_on:
       - database

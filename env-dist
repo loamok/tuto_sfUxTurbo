@@ -1,8 +1,36 @@
 COMPOSE_PROJECT_NAME=sfuxturbo
 
+# In all environments, the following files are loaded if they exist,
+# the latter taking precedence over the former:
+#
+#  * .env                contains default values for the environment variables needed by the app
+#  * .env.local          uncommitted file with local overrides
+#  * .env.$APP_ENV       committed environment-specific defaults
+#  * .env.$APP_ENV.local uncommitted environment-specific overrides
+#
+# Real environment variables win over .env files.
+#
+# DO NOT DEFINE PRODUCTION SECRETS IN THIS FILE NOR IN ANY OTHER COMMITTED FILES.
+#
+# Run "composer dump-env prod" to compile .env files for production use (requires symfony/flex >=1.2).
+# https://symfony.com/doc/current/best_practices.html#use-environment-variables-for-infrastructure-configuration
+
+###> symfony/framework-bundle ###
+APP_ENV=dev
+APP_SECRET=thisIsNotSecret
+JWT_PASSPHRASE=thisIsNotSecret
+###< symfony/framework-bundle ###
+
+###> symfony/mailer ###
+# MAILER_DSN=smtp://localhost
+###< symfony/mailer ###
+
 ###> doctrine/doctrine-bundle ###
-#DATABASE_URL=mysql://root:changeme@127.0.0.1:8086/sfuxturbo?serverVersion=mariadb-10.5.0
-DATABASE_URL=mysql://root:changeme@database:3306/sfuxturbo?serverVersion=mariadb-10.5.0
+# Format described at https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
+# IMPORTANT: You MUST configure your server version, either here or in config/packages/doctrine.yaml
+#
+# DATABASE_URL="mysql://sfuxturbo__user:changeme_sfuxturbo_passwd@127.0.0.1:8806/sfuxturbo?serverVersion=mariadb-10.5.0"
+DATABASE_URL="mysql://sfuxturbo__user:changeme_sfuxturbo_passwd@database:3306/sfuxturbo?serverVersion=mariadb-10.5.0"
 ###< doctrine/doctrine-bundle ###
 
 ###config docker dans compose à ajouter à votre .env###
@@ -17,14 +45,14 @@ DOCKER_NETWORK=tuto_sfuxturbo_default
 
 ###MariaDB ###
 # external access port
-MYSQL_EXT_PORT=8086
+MYSQL_EXT_PORT=8006
 # root password
 MYSQL_ROOT_PASSWORD=changeme
 # database for the tuto
 MYSQL_DATABASE=sfuxturbo
 # user for the tuto
-MYSQL_USER=sfuxturbo_user
-# user password for the tuto
+MYSQL_USER=sfuxturbo__user
+# user password for the app
 MYSQL_PASSWORD=changeme_sfuxturbo_passwd
 
 ###Nginx ###
@@ -41,13 +69,19 @@ PMA_EXT_PORT=8001
 # proxy configuration
 # leave commented or empty or delete all of this configuration if you are not using a proxy
 # http proxy defines as: http://plop:tagada@proxy.exemple.com:8080
-#PROXY=''
+PROXY=''
 # https proxy defines as: http://plop:tagada@proxy.exemple.com:8080
-#PROXYS=''
+PROXYS=''
 # 'no_proxy' for direct access
-#NO_PROXY='localhost,127.*'
+NO_PROXY='localhost,127.*'
 
 ###Encore ###
 # external access port for NODE and Encore
 NODE_EXT_PORT=8004
+
+###SQLD ###
+# external access port for wwwsqldesigner
+# your instance of wwwsqldesigner for sfuxturbo will be accessible by http://localhost:8002 where 8002 is the configured external port
+SQLD_EXT_PORT=8002
+
 ###< docker ###
