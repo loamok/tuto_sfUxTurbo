@@ -286,9 +286,53 @@ Une fois le js recompilé (npm run dev), le cache nettoyé (symfony console cach
 
 (pas bluffant de simplicité d'installation malheureusement)
 
-Du coup, je n'ai pas encore compris pourquoi on nous parle de Mercure. On voit ça dans le prochain chapitre.
+Du coup, je n'ai pas encore compris pourquoi on nous parle de Mercure. ~~On voit ça dans le prochain chapitre.~~ Quand j'aurais réussi à le faire fonctionner (c'est pas pour tout de suite du coup).
 
 - - -
+
+## Symfony UX Turbo avec gestion des utilisateurs
+### Introduction
+
+Il commence à devenir intéressant d'ajouter la gestion des utilisateurs à nos applications.
+
+### Security bundle
+En suivant ceci : https://symfony.com/doc/current/security.html#installation
+
+On commence par ajouter le security bundle
+
+    symfony composer require symfony/security-bundle
+
+Suivis des désormais sempiternels npm install --force et npm run dev
+
+    npm install --force
+    npm run dev
+
+Ensuite il faut générer la classe Entity\User et effectuer les migrations.
+
+Et configurer le security.yaml (config/packages)
+
+Là vous trouverez tout ce qu'il vous faut : https://github.com/loamok/tuto_sfUxTurbo/tree/feature/sf_ux_turbo_users
+
+### Users fixtures
+Parce que c'est toujours pratique (quand on les gère correctement) d'avoir des fixtures dans son projet installez le bundle DoctrineFixtures : 
+
+    symfony composer require --dev doctrine/doctrine-fixtures-bundle
+
+Allez, comme vous êtes sages je vous fait un cadeau ! 
+
+Allez voir le fichier *src/DataFixtures/AppFixtures.php* de mon dépôt, il permet de faire des fixtures groupées et de mettre le contenu des fixtures dans du yaml que l'on peut exclure de git et donc avoir une fixture user sans commiter de mot de passe. C'est-y pas beau ça ? 
+
+Allez voir le fichier *src/DataFixtures/UserFixtures.php* si vous voulez comprendre comment ça fonctionne.
+
+Copiez le fichier users.dist.yaml en users.yaml, ajoutez vos utilisateurs et lancez *doctrine:fixtures:load* c'est magique !
+
+    console doctrine:fixtures:load --group group_users
+Avec les groupes vous n'avez aucun risque de supprimer du contenu ailleurs dans votre application si vous utilisez *--append*.
+
+Mais il se fait tard déjà ! La prochaine fois on ajoute le formulaire d'authentification, les cookies de session et remember_me, la fonction de mot de passe perdu et on essaiera d'ajouter la gestion des tokens pour les apis si on as un peu de temps.
+
+- - -
+
 
 *liens : 
  - [1] https://github.com/symfony/ux-turbo
