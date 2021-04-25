@@ -40,7 +40,7 @@ services:
     volumes:
       - './:/var/www/sfuxturbo/'
     ports:
-      - '${NGINX_EXT_PORT:8000}:80'
+      - '${NGINX_EXT_PORT:-8000}:80'
     restart: unless-stopped
     depends_on:
       - php
